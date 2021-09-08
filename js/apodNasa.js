@@ -1,37 +1,38 @@
-// criando uma requisição de API
-const requisiçao = new XMLHttpRequest()
-// configurando a requisição do caminho da API
-requisiçao.onload = function() {
-    if (requisiçao.status >= 200 && requisiçao.status <= 299) {
-        const pedido = requisiçao.response
-
-        let conversao = JSON.parse(pedido);
-        console.log(conversao);
-
-        nasa(conversao)
-        
-    }
+// variável para captar o botão
+const botao = document.querySelector('#btn')
+// variavel para captar a div
+const div = document.querySelector('#principal')
+// variavel para captar o input
+const data = document.querySelector('#data')
+//evento para api aparecer ao apertar no botão
+window.addEventListener('load', function() {
+    Requisicao(data.value)
+})
+// evento que carrega a foto do dia, automaticamente, quando a página é carregada
+botao.addEventListener('click', function () {
+    
+    Requisicao(data.value)
+})
+// função que faz a requisição da API APod da Nasa
+async function Requisicao(date) {
+    const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=DiuHqrkQtTM0MHOeHeREjXEjMeDOeBRpEoBcdlvr&date=${date}`)
+    console.log(response);
+    let dadosObj = await response.json()
+    console.log(dadosObj);
+    apiNasa(dadosObj)
 }
-
-const date = document.querySelector('#data')
-requisiçao.open (
-    "GET", 
-    `https://api.nasa.gov/planetary/apod?api_key=DiuHqrkQtTM0MHOeHeREjXEjMeDOeBRpEoBcdlvr&date=${date}`
-)
-
-requisiçao.send()
-
-const img = document.querySelector('#imagem')
-const p = document.querySelector('#explicacao')
-const h6 = document.querySelector('#copyright')
-const iframe = document.querySelector('#video')
-function nasa (object) {
-    if(object.media_type === "image") {
-    img.setAttribute('src', `${object.url}`)
+// fução que iça os elementos do objeto da APOD requisitados na página
+function apiNasa(dadosObject) {
+    div.innerHTML = `<h1>${dadosObject.title}</h1>`
+    if (dadosObject.media_type === 'image') {
+        div.innerHTML += `<img src="${dadosObject.url}">`
+    } 
+    else  {
+        div.innerHTML += `<iframe src="${dadosObject.url}"></iframe>`
     }
-    else {
-        iframe.setAttribute('src', `${object.url}`)
-    }
-    p.textContent = object.explanation
-    h6.textContent = object.copyright
+    div.innerHTML += `<p>${dadosObject.explanation}</p>`
+    if (dadosObject.copyright !== undefined) {
+        div.innerHTML += `<h6>${dadosObject.copyright}</h6>`
+    } 
+
 }
