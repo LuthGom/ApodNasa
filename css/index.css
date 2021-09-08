@@ -6,7 +6,7 @@ body {
     margin: 0;
     width: 90vw;
     background: no-repeat;
-    background-image: url(./interestelar2.png);
+    background-image: url(../css/imagens/interestelar2.png);
     background-size: 100% 100%;
     /* color: white; */
 }
@@ -43,7 +43,7 @@ header > h1 {
     padding: 0.5em;
     border: 2px groove black;
     border-radius: 1em;
-    background-image: url(../interestelar1.png);
+    background-image: url(../css/imagens/interestelar1.png);
     color: white;
 }
 #titulo {
