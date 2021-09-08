@@ -4,13 +4,15 @@ const botao = document.querySelector('#btn')
 const div = document.querySelector('#principal')
 // variavel para captar o input
 const data = document.querySelector('#data')
+// variavel para captar a main
+const div1 = document.querySelector('#titulo')
 //evento para api aparecer ao apertar no botão
 window.addEventListener('load', function() {
+    
     Requisicao(data.value)
 })
 // evento que carrega a foto do dia, automaticamente, quando a página é carregada
 botao.addEventListener('click', function () {
-    
     Requisicao(data.value)
 })
 // função que faz a requisição da API APod da Nasa
@@ -23,16 +25,16 @@ async function Requisicao(date) {
 }
 // fução que iça os elementos do objeto da APOD requisitados na página
 function apiNasa(dadosObject) {
-    div.innerHTML = `<h1>${dadosObject.title}</h1>`
+    div1.innerHTML = `<h1>${dadosObject.title} (${dadosObject.date})</h1>`
     if (dadosObject.media_type === 'image') {
-        div.innerHTML += `<img src="${dadosObject.url}">`
+        div.innerHTML = `<img src="${dadosObject.url}">`
     } 
     else  {
-        div.innerHTML += `<iframe src="${dadosObject.url}"></iframe>`
+        div.innerHTML = `<iframe src="${dadosObject.url}"></iframe>`
     }
     div.innerHTML += `<p>${dadosObject.explanation}</p>`
     if (dadosObject.copyright !== undefined) {
         div.innerHTML += `<h6>${dadosObject.copyright}</h6>`
     } 
-
+    
 }

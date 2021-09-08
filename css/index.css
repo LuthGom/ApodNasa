@@ -1,15 +1,89 @@
-#principal {
-    height: 50vh;
+html {
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
+    margin: 0;
 }
-
-.img {
+body {
+    margin: 0;
+    width: 90vw;
+    background: no-repeat;
+    background-image: url(./interestelar2.png);
+    background-size: 100% 100%;
+    /* color: white; */
+}
+header {
     display: flex;
     justify-content: center;
+    margin: 2em;
+}
+header > h1 {
+    font-weight: bold;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    padding-left: 1em;
+}
+#logo {
+    width: 3em;
+    height: 3em;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+}
+.pesquisa {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.pesquisa > legend, input, button {
+    margin: 1em;
+    padding: 0.5em;
+    border: 2px groove black;
+    border-radius: 1em;
+    background-image: url(../interestelar1.png);
+    color: white;
+}
+#titulo {
+    text-align: center;
+    margin: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    color:saddlebrown;
+    text-shadow: 1px 1px white;
+}
+#principal {
+    display: flex;
+    justify-content: space-between;
     height: 100vh;
     width: 100vw;
+    /* color: white; */
+    margin-left: 1em;
+   
+}
+#principal > img {
+    /* margin-top: 50px; */
+    height: 100%;
+    width: 60%;
+
+}
+#principal > p {
+    margin: 0 2.5em 0 2.5em;
+    padding: 1em;
+    width: 50%;
+    height: 70vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: yellow;
+    border: 2px dashed black;
+
+}
+footer > p {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+    margin: 1em 0 0 0;
+    padding: 0;
 }
