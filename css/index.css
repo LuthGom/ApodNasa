@@ -14,7 +14,7 @@ header {
 }
 header > h1 {
     font-weight: bold;
-    color: white;
+    color: yellow;
     font-family: 'Star';
     font-size: 2em;
     padding: 1em 0.5em 0 0.5em;
@@ -32,15 +32,16 @@ header > h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 20px;
-    
+    margin: 2em;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid yellow;    
 }
 .pesquisa {
     display: flex;
     justify-content: center;
     font-weight: bold;
 }
-.pesquisa > legend, input, button {
+.pesquisa >  input, button {
     margin: 1em;
     padding: 0.5em;
     border: 2px groove white;
@@ -50,7 +51,16 @@ header > h1 {
     color: white;
 }
 .pesquisa > legend {
-    border-radius: 0 10em 10em 0;
+    margin: 1em;
+    padding: 0.5em;
+    color: white;
+    border: 1px dotted rosybrown;
+}
+.pesquisa > input:hover, button:hover {
+    cursor: pointer;
+}
+.pesquisa > input:active, button:active {
+    border: 1px solid purple;
 }
 #titulo {
     text-align: center;
@@ -60,7 +70,7 @@ header > h1 {
     font-size: 2em;
     color:saddlebrown;
     text-shadow: 1px 1px white;
-    border: 2px solid ;
+    border: 2px solid black;
     background-image: url(./imagens/bg_title.gif);
 }
 #principal {
