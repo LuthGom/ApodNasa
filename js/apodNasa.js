@@ -6,14 +6,17 @@ const div = document.querySelector('#principal')
 const data = document.querySelector('#data')
 // variavel para captar a main
 const div1 = document.querySelector('#titulo')
+// variavel para captar a div do copyright
+const div2 = document.querySelector('#copyright')
 //evento para api aparecer ao apertar no botão
 window.addEventListener('load', function() {
-    
     Requisicao(data.value)
 })
 // evento que carrega a foto do dia, automaticamente, quando a página é carregada
-botao.addEventListener('click', function () {
+botao.addEventListener('click', function (e) {
+    e.preventDefault()
     Requisicao(data.value)
+    
 })
 // função que faz a requisição da API APod da Nasa
 async function Requisicao(date) {
@@ -34,7 +37,7 @@ function apiNasa(dadosObject) {
     }
     div.innerHTML += `<p>${dadosObject.explanation}</p>`
     if (dadosObject.copyright !== undefined) {
-        div.innerHTML += `<h6>${dadosObject.copyright}</h6>`
+        div2.innerHTML = `<h6> Credits: ${dadosObject.copyright}</h6>`
     } 
     
 }
