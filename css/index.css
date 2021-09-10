@@ -62,9 +62,9 @@ header > h1 {
 .pesquisa > input:active, button:active {
     border: 1px solid purple;
 }
-#titulo {
+#titulo > h1 {
     text-align: center;
-    margin: 1em 13em 1em 13em;
+    margin: 1em 1em 1em 1em;
     padding: 0.5em 0 0.5em 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2em;
@@ -82,21 +82,21 @@ header > h1 {
 }
 #principal > img {
     /* margin-top: 50px; */
-    height: 100%;
-    width: 60%;
+    height: auto;
+    width: 50%;
     box-shadow: -5px -5px 5px white, 5px 5px 5px white;
 
 }
 #principal > iframe {
-    height: 100%;
-    width: 60%;
+    height: auto;
+    width: 50%;
     box-shadow: -5px -5px 2.5px white, 5px 5px 2.5px white;
 }
 #principal > p {
     margin: 0 2.5em 0 2.5em;
     padding: 1em;
     width: 50%;
-    height: 70vh;
+    height: fit-content;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     color: yellow;
@@ -118,10 +118,51 @@ header > h1 {
     color: yellow;
     text-shadow: 1px 1px black;
 }
+audio {
+    width: 10em;
+    height: 1em;
+}
 footer > p {
     font-family: 'Times New Roman', Times, serif;
     color: white;
     text-align: center;
-    margin: 1em 0 0 0;
+    margin: 1em 0 0.5em 0;
     padding: 0;
+}
+@media 
+    (max-width: 480px) {
+        body {
+            background-size: cover;
+            width: 100vw;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        header > h1 {
+            margin: 1em;
+            padding: 0.5em;
+        }
+        #logo {
+            margin: auto;
+        }
+       #principal {
+           display: flex;
+           flex-direction: column;
+           justify-content: flex-start;
+           align-items: center;
+           height: fit-content;
+       }
+       #principal > img {
+           width: 80%;
+           height: auto;
+           margin: 2em;
+       }
+       #principal > p {
+           width: 80%;
+           height: auto;
+       }
+
 }
