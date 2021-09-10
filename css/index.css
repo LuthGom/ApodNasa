@@ -9,17 +9,9 @@ body {
 }
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     margin: 2em;
-}
-header > h1 {
-    font-weight: bold;
-    color: yellow;
-    font-family: 'Star';
-    font-size: 2em;
-    padding: 1em 0.5em 0 0.5em;
-    border: 3px solid white;
-    border-radius: 1em;
 }
 #logo {
     margin-top: 0.5em;
@@ -27,6 +19,20 @@ header > h1 {
     border: 1px solid white;
     width: 5em;
     height: 5em;
+}
+header > h1 {
+    font-weight: bold;
+    color: yellow;
+    font-family: 'Star';
+    font-size: 1.9em;
+    padding: 1em 0.5em 0.7em 0.5em;
+    border: 3px solid white;
+    border-radius: 1em;
+}
+audio {
+    width: 8em;
+    height: 1em;
+    margin-left: 0.5em;
 }
 #container {
     display: flex;
@@ -81,7 +87,6 @@ header > h1 {
    
 }
 #principal > img {
-    /* margin-top: 50px; */
     height: auto;
     width: 50%;
     box-shadow: -5px -5px 5px white, 5px 5px 5px white;
@@ -117,10 +122,6 @@ header > h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: yellow;
     text-shadow: 1px 1px black;
-}
-audio {
-    width: 10em;
-    height: 1em;
 }
 footer > p {
     font-family: 'Times New Roman', Times, serif;
