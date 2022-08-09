@@ -9,6 +9,7 @@ const div1 = document.querySelector('#titulo')
 // variavel para captar a div do copyright
 const div2 = document.querySelector('#copyright')
 //evento para api aparecer ao apertar no botão
+const sound = document.querySelector('audio')
 window.addEventListener('load', function() {
     Requisicao(data.value)
 })
@@ -16,6 +17,7 @@ window.addEventListener('load', function() {
 botao.addEventListener('click', function (e) {
     e.preventDefault()
     Requisicao(data.value)
+    sound.play()
     
 })
 // função que faz a requisição da API APod da Nasa
